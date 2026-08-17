@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Elias Gomes">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
 </head>
 
 <body>
@@ -39,11 +41,11 @@
                         </div>
                     </header>
                     <div class="links">
-                        <a href="https://www.linkedin.com/in/elias-gomes-9b1a4b1b2/" target="_blank">
+                        <a href="https://www.linkedin.com/in/elias-gomes-2b7552393/" target="_blank">
                             <span>LinkedIn</span>
                             <span>→</span>
                         </a>
-                        <a href="https://github.com/eliasgomes" target="_blank">
+                        <a href="https://github.com/gomes0" target="_blank">
                             <span>GitHub</span>
                             <span>→</span>
                         </a>
@@ -72,6 +74,31 @@
             </div>
         </div>
     </main>
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener("load", () => {
+
+                navigator.serviceWorker
+                    .register("./service-worker.js")
+
+                    .then(() => {
+                        console.log("Service Worker registrado com sucesso!");
+                    })
+
+                    .catch((erro) => {
+                        console.error(
+                            "Erro ao registrar Service Worker:",
+                            erro
+                        );
+                    });
+
+            });
+
+        }
+
+    </script>
 </body>
 
 </html>
